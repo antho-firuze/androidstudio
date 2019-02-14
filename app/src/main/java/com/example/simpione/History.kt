@@ -6,8 +6,10 @@ import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.r0adkll.slidr.Slidr
 import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.list_history.view.*
 
@@ -25,6 +27,14 @@ class History : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
+
+        // for toolbar settings
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        Slidr.attach(this)
 
         layoutManager = LinearLayoutManager(this)
         recycleView.layoutManager = layoutManager
@@ -49,6 +59,14 @@ class History : AppCompatActivity() {
             }
         })
 
+    }
+
+    // function for back button on toolbar ( <- )
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == android.R.id.home)
+            this.finish()
+
+        return super.onOptionsItemSelected(item)
     }
 
     fun getPage(){

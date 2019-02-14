@@ -1,5 +1,6 @@
 package com.example.simpione
 
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
@@ -13,12 +14,16 @@ import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import android.graphics.RectF
+import android.support.v4.view.GravityCompat
+import android.support.v7.app.ActionBarDrawerToggle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import com.github.mikephil.charting.utils.ViewPortHandler
 import com.github.mikephil.charting.animation.ChartAnimator
 import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
 import com.github.mikephil.charting.renderer.BarChartRenderer
-
 
 
 class Home : AppCompatActivity() {
@@ -27,8 +32,43 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        // for toolbar settings
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+
+        val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.drawer_open, R.string.drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
+
         loadChart()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.right_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    fun onItemSelected(p0: MenuItem): Boolean {
+//        Toast.makeText(this, p0.title.toString(), Toast.LENGTH_SHORT).show()
+        when (p0.itemId) {
+            R.id.menu_history -> {
+                startActivity(Intent(this, History::class.java))
+            }
+            R.id.menu_position -> {
+                startActivity(Intent(this, Position::class.java))
+            }
+            R.id.menu_c -> {
+                Toast.makeText(this, p0.title.toString(), Toast.LENGTH_SHORT).show()
+            }
+            R.id.action_settings -> {
+                Toast.makeText(this, p0.title.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
 
     fun loadChart() {
         val data = CombinedData()
@@ -56,6 +96,7 @@ class Home : AppCompatActivity() {
         mChart.setViewPortOffsets(0f, 0f, 0f, 0f)
 //        mChart.setExtraOffsets(0f,0f,0f,-30f)
 
+        mChart.isDoubleTapToZoomEnabled = false
         mChart.setPinchZoom(false)
 
 //        mChart.renderer.drawData()

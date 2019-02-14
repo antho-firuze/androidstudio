@@ -9,131 +9,159 @@
         tools:context=".Position">
 
     <LinearLayout
-            android:id="@+id/layout_top"
+            android:id="@+id/layout_toolbar"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center" android:layout_marginTop="0dp" app:layout_constraintTop_toTopOf="parent">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/title_investvalue"
-                  android:text="Nilai Investasi"
-                  android:textColor="#FFFFFF"
-                  android:layout_marginTop="32dp"
-                  android:textSize="30dp" android:layout_marginEnd="8dp"
-                  android:layout_marginStart="8dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/text_investdate"
-                  android:text="(tanggal 15-Jan-19)"
-                  android:textColor="#FFFFFF"
-                  android:textSize="16dp" android:layout_marginEnd="8dp"
-                  android:layout_marginStart="8dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/text_investvalue"
-                  android:text="IDR 6,056 juta"
-                  android:textColor="#FFFFFF"
-                  android:textSize="40dp"
-                  android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/title_profitloss"
-                  android:text="Untung/Rugi"
-                  android:textColor="#FFFFFF"
-                  android:textSize="18dp" android:layout_marginTop="32dp" android:layout_marginEnd="8dp"
-                  android:layout_marginStart="8dp"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:id="@+id/text_profitloss"
-                  android:text="+325.123 (+9.00%)"
-                  android:textColor="#FFFFFF"
-                  android:textSize="18dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
-                  android:layout_marginEnd="8dp"
-                  android:layout_marginStart="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:id="@+id/titla_investtype"
-                  android:text="Efek dengan nilai investasi terbesar:"
-                  android:textColor="#FFFFFF"
-                  android:textSize="14dp" android:layout_marginTop="8dp" android:layout_marginBottom="4dp"
-                  android:layout_marginEnd="8dp"
-                  android:layout_marginStart="4dp"/>
-    </LinearLayout>
+            android:layout_height="match_parent">
 
-    <ScrollView
-            app:layout_constraintTop_toBottomOf="@+id/layout_top"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/layout_bottom">
-        <LinearLayout
-                android:id="@+id/layout_middle"
-                android:orientation="vertical"
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:theme="@style/ToolbarTheme"
+                android:textColorSecondary="#ffffff"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycleView"
-                    android:scrollbars="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            <ProgressBar
-                    android:id="@+id/progressbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <LinearLayout
-            android:id="@+id/layout_bottom"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:minHeight="?android:attr/actionBarSize">
 
             <TextView
-                    android:id="@+id/text_lastupdate"
-                    android:text="Update: 29-Jan-2019 12:23"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12dp"
-                    android:paddingRight="8dp"
-                    android:textAlignment="textEnd"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tv_content"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:layout_gravity="center"
+                    android:text="Position"
+                    android:textColor="#ffffff"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
-        </LinearLayout>
+        </android.support.v7.widget.Toolbar>
 
         <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/layout_top"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:layout_weight="1">
+                android:layout_height="wrap_content"
+                android:gravity="center" android:layout_marginTop="0dp" app:layout_constraintTop_toTopOf="parent">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/title_investvalue"
+                      android:text="Nilai Investasi"
+                      android:textColor="#FFFFFF"
+                      android:layout_marginTop="32dp"
+                      android:textSize="30dp" android:layout_marginEnd="8dp"
+                      android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/text_investdate"
+                      android:text="(tanggal 15-Jan-19)"
+                      android:textColor="#FFFFFF"
+                      android:textSize="16dp" android:layout_marginEnd="8dp"
+                      android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/text_investvalue"
+                      android:text="IDR 6,056 juta"
+                      android:textColor="#FFFFFF"
+                      android:textSize="40dp"
+                      android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/title_profitloss"
+                      android:text="Untung/Rugi"
+                      android:textColor="#FFFFFF"
+                      android:textSize="18dp" android:layout_marginTop="32dp" android:layout_marginEnd="8dp"
+                      android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/text_profitloss"
+                      android:text="+325.123 (+9.00%)"
+                      android:textColor="#FFFFFF"
+                      android:textSize="18dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                      android:layout_marginEnd="8dp"
+                      android:layout_marginStart="8dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/titla_investtype"
+                      android:text="Efek dengan nilai investasi terbesar:"
+                      android:textColor="#FFFFFF"
+                      android:textSize="14dp" android:layout_marginTop="8dp" android:layout_marginBottom="4dp"
+                      android:layout_marginEnd="8dp"
+                      android:layout_marginStart="4dp"/>
+        </LinearLayout>
 
-            <Button
-                    android:id="@+id/btn_month"
-                    android:textAllCaps="false"
-                    android:background="@drawable/btn_selected"
-                    android:layout_margin="5dp"
-                    android:text="IDR"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_weight="1"/>
-            <Button
-                    android:id="@+id/btn_year"
-                    android:textAllCaps="false"
-                    android:background="@drawable/btn_normal"
-                    android:layout_margin="5dp"
-                    android:text="%"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_weight="1"/>
-            <Button
-                    android:id="@+id/btn_frombeginning"
-                    android:textAllCaps="false"
-                    android:background="@drawable/btn_normal"
-                    android:layout_margin="5dp"
-                    android:text="Qty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_weight="1"/>
+        <ScrollView
+                app:layout_constraintTop_toBottomOf="@+id/layout_top"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_bottom">
+            <LinearLayout
+                    android:id="@+id/layout_middle"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycleView"
+                        android:scrollbars="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <ProgressBar
+                        android:id="@+id/progressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+                android:id="@+id/layout_bottom"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/text_lastupdate"
+                        android:text="Update: 29-Jan-2019 12:23"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp"
+                        android:paddingRight="8dp"
+                        android:textAlignment="textEnd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:layout_weight="1">
+
+                <Button
+                        android:id="@+id/btn_month"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_selected"
+                        android:layout_margin="5dp"
+                        android:text="IDR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_weight="1"/>
+                <Button
+                        android:id="@+id/btn_year"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_normal"
+                        android:layout_margin="5dp"
+                        android:text="%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_weight="1"/>
+                <Button
+                        android:id="@+id/btn_frombeginning"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_normal"
+                        android:layout_margin="5dp"
+                        android:text="Qty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_weight="1"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

@@ -12,13 +12,13 @@
             android:theme="@style/AppTheme">
         <activity android:name=".History">
         </activity>
-        <activity android:name=".Home">
+        <activity android:name=".Position">
         </activity>
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".GetStartedEmail">
         </activity>
-        <activity android:name=".Position">
+        <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
