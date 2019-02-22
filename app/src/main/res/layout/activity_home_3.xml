@@ -119,40 +119,19 @@
                     android:layout_height="52dp"
                     app:layout_constraintBottom_toBottomOf="parent">
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <Button
-                            android:id="@+id/btn_month"
-                            android:onClick="onButtonClick"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/avenirnextltpromedium"
-                            android:textAllCaps="false"
-                            android:text="30 Hari"
-                            android:textSize="16sp"/>
-
-                    <Button
-                            android:id="@+id/btn_year"
-                            android:onClick="onButtonClick"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/avenirnextltpromedium"
-                            android:textAllCaps="false"
-                            android:text="1 Tahun"
-                            android:textSize="16sp"/>
-
-                    <Button
-                            android:id="@+id/btn_frombeginning"
-                            android:onClick="onButtonClick"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/avenirnextltpromedium"
-                            android:textAllCaps="false"
-                            android:text="Sejak Awal"
-                            android:textSize="16sp"/>
-                </LinearLayout>
+                <com.gigamole.navigationtabstrip.NavigationTabStrip
+                        android:id="@+id/nts_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        app:nts_active_color="#fff"
+                        app:nts_color="#ff1748"
+                        app:nts_factor="2.8"
+                        app:nts_corners_radius="1.5dp"
+                        app:nts_inactive_color="#81ffffff"
+                        app:nts_titles="@array/titles"
+                        app:nts_typeface="fonts/drugs.otf"
+                        app:nts_weight="3dp"/>
 
             </LinearLayout>
 

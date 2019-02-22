@@ -106,7 +106,6 @@ class Position : AppCompatActivity() {
 //        getData2(portfolios2)
 
 //        getPage()
-//
 //        recycleView.addOnScrollListener(object: RecyclerView.OnScrollListener(){
 //            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 //
@@ -172,9 +171,12 @@ class Position : AppCompatActivity() {
             if (p1 % 2 == 0){
 //                p0.itemView.layout_border.background = ContextCompat.getDrawable(p0.itemView.context, R.drawable.border_list)
             } else {
-                p0.itemView.tv_name.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
-                p0.itemView.tv_type.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
-                p0.itemView.tv_value.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
+                p0.itemView.tv_name.background = ContextCompat.getDrawable(p0.itemView.context, R.drawable.transparent_to_white)
+                p0.itemView.tv_type.background = ContextCompat.getDrawable(p0.itemView.context, R.drawable.transparent_to_white)
+                p0.itemView.tv_value.background = ContextCompat.getDrawable(p0.itemView.context, R.drawable.transparent_to_white)
+//                p0.itemView.tv_name.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
+//                p0.itemView.tv_type.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
+//                p0.itemView.tv_value.background = ContextCompat.getDrawable(p0.itemView.context, R.color.colorPrimaryDark)
             }
 
             p0.itemView.tv_name.text = r.name

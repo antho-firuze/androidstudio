@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="titles">
+        <item>30 Hari</item>
+        <item>1 Tahun</item>
+        <item>Sejak Awal</item>
+    </string-array>
+
+</resources>

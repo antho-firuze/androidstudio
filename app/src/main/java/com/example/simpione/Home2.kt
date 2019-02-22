@@ -11,35 +11,24 @@ import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IFillFormatter
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home_2.*
 import java.util.*
-import android.graphics.RectF
 import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
-import co.ceryle.segmentedbutton.SegmentedButton
-import co.ceryle.segmentedbutton.SegmentedButtonGroup
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
-import com.github.mikephil.charting.utils.ViewPortHandler
-import com.github.mikephil.charting.animation.ChartAnimator
-import com.github.mikephil.charting.components.YAxis
-import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
-import com.github.mikephil.charting.renderer.BarChartRenderer
 
 
-class Home : AppCompatActivity(), View.OnClickListener {
+class Home2 : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         Toast.makeText(this, v?.id.toString(), Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_home_2)
 
         // for toolbar settings
         setSupportActionBar(toolbar)
@@ -50,6 +39,16 @@ class Home : AppCompatActivity(), View.OnClickListener {
         toggle.syncState()
 
         loadChart("month")
+
+        segmentedButtonGroup.setPosition(0, 0)
+        segmentedButtonGroup.setOnClickedButtonListener { position: Int ->
+//            Toast.makeText(this, position.toString(), Toast.LENGTH_SHORT).show()
+            when(position) {
+                0 -> loadChart("month")
+                1 -> loadChart("year")
+                2 -> loadChart("all")
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -63,7 +62,7 @@ class Home : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, History::class.java))
             }
             R.id.menu_position -> {
-                startActivity(Intent(this, Position::class.java))
+                startActivity(Intent(this, Position2::class.java))
             }
             R.id.menu_c -> {
                 Toast.makeText(this, p0.title.toString(), Toast.LENGTH_SHORT).show()
@@ -74,20 +73,6 @@ class Home : AppCompatActivity(), View.OnClickListener {
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    fun onButtonClick(p0: View?) {
-        when (p0?.id) {
-            R.id.btn_month -> {
-                loadChart("month")
-            }
-            R.id.btn_year -> {
-                loadChart("year")
-            }
-            R.id.btn_frombeginning -> {
-                loadChart("all")
-            }
-        }
     }
 
     fun loadChart(period: String) {

@@ -11,7 +11,7 @@ import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IFillFormatter
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home_3.*
 import java.util.*
 import android.graphics.RectF
 import android.support.v4.view.GravityCompat
@@ -32,14 +32,14 @@ import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
 import com.github.mikephil.charting.renderer.BarChartRenderer
 
 
-class Home : AppCompatActivity(), View.OnClickListener {
+class Home3 : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         Toast.makeText(this, v?.id.toString(), Toast.LENGTH_SHORT).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_home_2)
 
         // for toolbar settings
         setSupportActionBar(toolbar)
@@ -50,6 +50,35 @@ class Home : AppCompatActivity(), View.OnClickListener {
         toggle.syncState()
 
         loadChart("month")
+
+        nts_bottom.setTabIndex(0, true)
+        nts_bottom.setOnClickListener({ Toast.makeText(this, "testtttt", Toast.LENGTH_SHORT).show() })
+//        button.setOnClickListener {
+//            Toast.makeText(this, it?.id.toString(), Toast.LENGTH_SHORT).show()
+//        }
+//        val button =
+
+//        btn_year.setOnClickListener { it: View? -> Toast.makeText(this, it?.id.toString(), Toast.LENGTH_SHORT).show() }
+//        btn_year.setOnClickListener { it: View? ->
+//            var position = segmentedButtonGroup.position
+//            position = ++position % 3
+//            segmentedButtonGroup.setPosition(position, true)
+//            Toast.makeText(this, "testing", Toast.LENGTH_SHORT).show()
+//        }
+
+//        group = (SegmentedButtonGroup) findViewById(R.id.segmentedButtonGroup);
+//        button!!.setOnClickListener(View.OnClickListener {
+//            v: View? ->  Toast.makeText(this, v?.id.toString(), Toast.LENGTH_SHORT).show()
+//        })
+//        btn_month.setOnClickListener(this)
+//        button.setOnClickListener( View.OnClickListener() {
+//            fun onClick(view: View) {
+//                int position = group.getPosition();
+//                position = ++position % 3;
+//                updateButton(position);
+//                group.setPosition(position, true);
+//            }
+//        });
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -77,17 +106,19 @@ class Home : AppCompatActivity(), View.OnClickListener {
     }
 
     fun onButtonClick(p0: View?) {
-        when (p0?.id) {
-            R.id.btn_month -> {
-                loadChart("month")
-            }
-            R.id.btn_year -> {
-                loadChart("year")
-            }
-            R.id.btn_frombeginning -> {
-                loadChart("all")
-            }
-        }
+//        val button: SegmentedButton = findViewById(segmentedButtonGroup.position)
+        Toast.makeText(applicationContext,"test", Toast.LENGTH_SHORT).show()
+//        when (p0?.id) {
+//            R.id.btn_month -> {
+//                loadChart("month")
+//            }
+//            R.id.btn_year -> {
+//                loadChart("year")
+//            }
+//            R.id.btn_frombeginning -> {
+//                loadChart("all")
+//            }
+//        }
     }
 
     fun loadChart(period: String) {

@@ -148,33 +148,58 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" android:layout_weight="1">
 
-                <Button
-                        android:id="@+id/btn_month"
-                        android:textAllCaps="false"
-                        android:background="@drawable/bg_btn"
-                        android:fontFamily="@font/avenirnextltpromedium"
-                        android:layout_margin="5dp"
-                        android:text="IDR"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="1"/>
-                <Button
-                        android:id="@+id/btn_year"
-                        android:textAllCaps="false"
-                        android:background="@drawable/bg_btn"
-                        android:fontFamily="@font/avenirnextltpromedium"
-                        android:layout_margin="5dp"
-                        android:text="%"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="1"/>
-                <Button
-                        android:id="@+id/btn_frombeginning"
-                        android:textAllCaps="false"
-                        android:background="@drawable/bg_btn"
-                        android:fontFamily="@font/avenirnextltpromedium"
-                        android:layout_margin="5dp"
-                        android:text="Qty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_weight="1"/>
+                <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                        android:id="@+id/segmentedButtonGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:elevation="2dp"
+                        app:sbg_animateSelector="fastOutSlowIn"
+                        app:sbg_animateSelectorDuration="500"
+                        app:sbg_backgroundDrawable="@drawable/gradient_drawable"
+                        app:sbg_dividerBackgroundDrawable="@drawable/gradient_drawable_divider"
+                        app:sbg_dividerColor="@color/grey_500"
+                        app:sbg_dividerPadding="10dp"
+                        app:sbg_dividerRadius="10dp"
+                        app:sbg_dividerSize="4dp"
+                        app:sbg_position="1"
+                        app:sbg_radius="2dp"
+                        app:sbg_ripple="true"
+                        app:sbg_rippleColor="@color/blue_300"
+                        app:sbg_selectorBackgroundDrawable="@drawable/gradient_drawable_selector"
+                        app:sbg_selectorColor="@color/BlueViolet">
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                            android:id="@+id/btn_month"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/avenirnextltpromedium"
+                            app:sb_text="IDR"
+                            app:sb_textColor="@color/white"
+                            app:sb_textSize="16sp"/>
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                            android:id="@+id/btn_year"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/avenirnextltpromedium"
+                            app:sb_text="%"
+                            app:sb_textColor="@color/white"
+                            app:sb_textSize="16sp"/>
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                            android:id="@+id/btn_frombeginning"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/avenirnextltpromedium"
+                            app:sb_text="Qty"
+                            app:sb_textColor="@color/white"
+                            app:sb_textSize="16sp"/>
+
+                </co.ceryle.segmentedbutton.SegmentedButtonGroup>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

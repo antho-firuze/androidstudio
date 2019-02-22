@@ -36,4 +36,6 @@ dependencies {
     // Additional Plugins/Components
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
     implementation 'com.r0adkll:slidableactivity:2.0.6'
+    implementation 'com.github.ceryle:SegmentedButton:v2.0.2'
+    implementation 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
 }
