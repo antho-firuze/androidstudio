@@ -18,6 +18,7 @@
     <item
         android:id="@+id/menu_c"
         android:checkable="true"
+        android:visible="false"
         android:onClick="onItemSelected"
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="Menu c"/>

@@ -80,7 +80,7 @@ class Position2 : AppCompatActivity() {
     var isLoading = false
     var limit = 5
 
-    lateinit var adapter: Position2.ListAdapter
+    lateinit var adapter: ListAdapter
     lateinit var layoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
